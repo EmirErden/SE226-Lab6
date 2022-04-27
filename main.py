@@ -10,21 +10,20 @@ while a <= user_input:
 total = sum(total_numbers)
 print(total)
 
-user_input2 = int(input("Please enter a number for the second calculation: "))
+# Question 2
+
+user_input2 = float(input("Please enter a number for the second calculation: "))
+
+product = 1
 
 
 def capital_pi(number):
-    initial_number: int = 1
-    total2: float = 1
+    """This function calculates product of (number/(number+2))-10 till the nuber is zero"""
 
-    def calculator2(ex_number):
-        return (ex_number/(ex_number+2))-10
-
-    while initial_number <= number:
-        total2 = total2 * calculator2(initial_number)
-        initial_number = initial_number + 1
-
-    print(total2)
+    global product
+    if number >= 1:
+        product = (number/(number+2))-10 * capital_pi(number-1)
+    return product
 
 
 capital_pi(user_input2)
